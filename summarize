@@ -1,0 +1,20 @@
+#!/usr/bin/awk -f
+
+BEGIN {
+total=10;
+}
+/1/ {
+cutoff=$1;
+sum_tcp=0;
+sum_ecn=0;
+j=0
+for (i=NF; i>4; i-=2) {
+	if (j < total-cutoff)
+		sum_ecn+=$i;
+	else
+		sum_tcp+=$i;
+	j++;
+}
+print cutoff, sum_ecn/(total-cutoff)/(sum_tcp/cutoff)
+}
+

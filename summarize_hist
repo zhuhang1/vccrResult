@@ -1,0 +1,22 @@
+#!/usr/bin/awk -f
+
+BEGIN {
+total=10;
+}
+/1/ {
+sum_ecn=0;
+j=0
+for (i=NF; i>4; i-=2) {
+	if (j < total-2)
+		#sum_ecn+=$i;
+		sum_ecn=$i;
+	else if (j == total - 2)
+		tcp=$i;
+	else
+		vtcp=$i
+	j++;
+}
+#print vtcp*8/$2, tcp*8/$2, sum_ecn*8/(total-2)/$2
+print vtcp*8/$2, tcp*8/$2, sum_ecn*8/$2
+}
+

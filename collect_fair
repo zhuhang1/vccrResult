@@ -1,0 +1,29 @@
+#!/bin/bash
+
+if [ "$#" -lt 2 ]
+then
+  echo "Usage: `basename $0` outfile <key:prefix...>" 1>&2
+  exit 1
+fi
+
+out=$1; shift
+prefnum=$#
+prefixes=$@
+
+unset keys
+unset files
+for i in ${prefixes}; do
+	prefix=${i#*:}
+	rm ${prefix}.txt
+	for j in $( ls -d $prefix*-c* ); do
+        	echo ${j##*c} $(< ${j}/summary.txt) >> ${prefix}.txt
+	done
+	./summarize ${prefix}.txt > ${prefix}.out
+
+	export files="${files[@]} ${i#*:}.out" 
+	export keys="${keys[@]} ${i%%:*}"
+done
+echo ${keys}
+echo ${files}
+#keys=\"${keys}\"; files=\"${prefix}.out\"
+gnuplot -e "keys=\"${keys}\"; files=\"${files}\"; outfile=\"${out}.png\"" plot_fairness

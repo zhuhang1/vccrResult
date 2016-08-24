@@ -1,0 +1,12 @@
+#!/usr/bin/awk -f
+
+BEGIN {
+FS = ","
+}
+
+/1/ {
+if (NR == 1)
+	start = $1
+
+print ($1-start) " " $2
+}

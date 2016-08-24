@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [ "$#" -lt 2 ]
+then
+  echo "Usage: `basename $0` outfile prefix" 1>&2
+  exit 1
+fi
+
+out=$1; shift
+prefix=$1
+
+rm ${prefix}.txt
+for j in $( ls -d $prefix*-i* ); do
+       	echo ${j##*i} $(< ${j}/summary.txt) >> ${prefix}.txt
+done
+./summarize_hist ${prefix}.txt > ${prefix}.out
+
+#keys=\"${keys}\"; files=\"${prefix}.out\"
+gnuplot -e "infile=\"${prefix}.out\"; outfile=\"${out}.png\"" plot_hist
