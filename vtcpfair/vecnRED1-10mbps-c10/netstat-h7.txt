@@ -1,9 +1,9 @@
 Ip:
-    2484 total packets received
+    2516 total packets received
     0 forwarded
     0 incoming packets discarded
-    2484 incoming packets delivered
-    2489 requests sent out
+    2516 incoming packets delivered
+    2526 requests sent out
 Icmp:
     20 ICMP messages received
     0 input ICMP message failed.
@@ -26,9 +26,9 @@ Tcp:
     0 failed connection attempts
     0 connection resets received
     1 connections established
-    2464 segments received
-    2468 segments send out
-    1 segments retransmited
+    2496 segments received
+    2503 segments send out
+    3 segments retransmited
     0 bad segments received.
     0 resets sent
 Udp:
@@ -39,12 +39,12 @@ Udp:
 UdpLite:
 TcpExt:
     0 packet headers predicted
-    2463 acknowledgments not containing data payload received
+    2495 acknowledgments not containing data payload received
     1 congestion windows recovered without slow start after partial ack
     1 other TCP timeouts
-    TCPSynRetrans: 1
-    TCPOrigDataSent: 2466
+    TCPSynRetrans: 3
+    TCPOrigDataSent: 2501
 IpExt:
-    InOctets: 129816
-    OutOctets: 3699428
-    InNoECTPkts: 2484
+    InOctets: 131480
+    OutOctets: 3752048
+    InNoECTPkts: 2516
