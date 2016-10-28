@@ -1,0 +1,57 @@
+Ip:
+    281 total packets received
+    0 forwarded
+    0 incoming packets discarded
+    281 incoming packets delivered
+    553 requests sent out
+Icmp:
+    20 ICMP messages received
+    0 input ICMP message failed.
+    ICMP input histogram:
+        echo requests: 10
+        echo replies: 10
+    20 ICMP messages sent
+    0 ICMP messages failed
+    ICMP output histogram:
+        echo request: 10
+        echo replies: 10
+IcmpMsg:
+        InType0: 10
+        InType8: 10
+        OutType0: 10
+        OutType8: 10
+Tcp:
+    1 active connections openings
+    0 passive connection openings
+    0 failed connection attempts
+    0 connection resets received
+    1 connections established
+    261 segments received
+    267 segments send out
+    266 segments retransmited
+    0 bad segments received.
+    0 resets sent
+Udp:
+    0 packets received
+    0 packets to unknown port received.
+    0 packet receive errors
+    0 packets sent
+UdpLite:
+TcpExt:
+    0 packet headers predicted
+    260 acknowledgments not containing data payload received
+    14 times recovered from packet loss by selective acknowledgements
+    14 congestion windows recovered without slow start after partial ack
+    75 timeouts in loss state
+    2 fast retransmits
+    171 retransmits in slow start
+    1 other TCP timeouts
+    TCPLossProbes: 2
+    14 SACK retransmits failed
+    TCPSpuriousRTOs: 14
+    TCPSackShiftFallback: 74
+    TCPOrigDataSent: 265
+IpExt:
+    InOctets: 20236
+    OutOctets: 796868
+    InNoECTPkts: 281
